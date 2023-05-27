@@ -5,7 +5,7 @@ termbox2 := lib/libtermbox2.so.${termbox_lib_ver}
 
 termbox2: ${termbox2}
 
-lib/libtermbox2.so.${termbox_lib_ver}: ext/termbox2/libtermbox2.so.${termbox_lib_ver}
+lib/libtermbox2.so.${termbox_lib_ver}: termbox2/libtermbox2.so.${termbox_lib_ver}
 	@echo "[CP] $@ lib/"
 	@install -m 0755 $^ lib/
 
@@ -19,11 +19,11 @@ lib/libtermbox2.so: lib/libtermbox2.so.2
 	@rm -f $@
 	@ln -s $(shell basename $<) $@
 
-ext/termbox2/libtermbox2.so.${termbox_lib_ver}: $(wildcard ext/termbox2/*.h ext/termbox2/*.c) ext/termbox2/Makefile
-	@${MAKE} -C ext/termbox2 all
+termbox2/libtermbox2.so.${termbox_lib_ver}: $(wildcard termbox2/*.h termbox2/*.c) termbox2/Makefile
+	@${MAKE} -C termbox2 all
 
 termbox2-clean:
-	${MAKE} -C ext/termbox2 clean
+	${MAKE} -C termbox2 clean
 	${RM} -f lib/libtermbox2.* ${termbox2}
 
 extra_clean_targets += termbox2-clean

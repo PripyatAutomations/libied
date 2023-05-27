@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include "config.h"
 #include "debuglog.h"
+#include "maidenhead.h"
 #include "util.h"
 
 // toggle an intbool (<= 0 is off, >= 1 is on)
