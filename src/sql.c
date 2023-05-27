@@ -1,13 +1,16 @@
 /*
  * Utility functions to make working with SQL more pleasant
  */
-#include "config.h"
-#include "ft8goblin_types.h"
-#include "sql.h"
-#include "debuglog.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
 // Include sqlite3 and spatialite extensions as they are our default database for read-only info
 #include <sqlite3.h>
 #include <spatialite.h>
+#include "config.h"
+#include "sql.h"
+#include "debuglog.h"
 
 // Include libpq for postgresql
 #if	defined(USE_POSTGRESQL)

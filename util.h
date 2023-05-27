@@ -1,5 +1,7 @@
 #if	!defined(_util_h)
 #define	_util_h
+#include <stdint.h>
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {

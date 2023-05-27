@@ -21,6 +21,7 @@ real_dep_libs := $(foreach x,${dep_libs},-l${x})
 
 install_extra_targets += install-libied
 
+include mk/termbox2.mk
 include mk/compile.mk
 include mk/clean.mk
 include mk/install.mk

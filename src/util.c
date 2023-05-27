@@ -1,7 +1,13 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include <sys/stat.h>
 #include "config.h"
 #include "debuglog.h"
 #include "util.h"
-#include "ft8goblin_types.h"
 
 // toggle an intbool (<= 0 is off, >= 1 is on)
 void toggle(int *v) {
@@ -135,6 +141,7 @@ const char *mode_names[] = {
 //   "ARDOP FEC",
    NULL
 };
+
 const char *get_mode_name(tx_mode_t mode) {
    if (mode <= TX_MODE_NONE || mode >= TX_MODE_END) {
       return mode_names[0];
