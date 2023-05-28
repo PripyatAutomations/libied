@@ -17,7 +17,7 @@ real_dep_libs := $(foreach x,${dep_libs},-l${x})
 #src/%.c: GNUmakefile $(wildcard *.h)
 ./lib/${libied}: ${libied_real_objs} 
 	@echo "[SO] ${libied_real_objs} -> $@"
-	${CC} ${LDFLAGS} -fPIC -shared -Wl,-soname,${libied} -lm -o $@ ${libied_real_objs} ${real_dep_libs}
+	${CC} ${LDFLAGS} -fPIC -shared -Wl,-soname,${libied} -lm -o $@ ${termbox2} ${libied_real_objs} ${real_dep_libs}
 
 install_extra_targets += install-libied
 
